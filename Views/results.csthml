@@ -1,6 +1,0 @@
-<h1>Here is your list of numbers!</h1>
-<ul>@foreach(result in @Model)
-  {
-    <li>result</li>
-  }
-</ul>
