@@ -1,10 +1,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace PingPongApp
+namespace PingPongApp.Objects
 {
   public class PingPong
   {
+    private int _number;
+    public List<string> _instances = new List<string>{};
+
+    public PingPong(int number)
+    {
+     _number = number;
+    }
+
     public bool Rules(int input)
     {
       if (input % 15 == 0)
@@ -24,57 +32,31 @@ namespace PingPongApp
         return input % 3 == 0;
       }
     }
-    
 
-    public List<string> count = new List<string>{};
-    public List<string> CountList(int countTo)
+
+    public List<string> CountList()
     {
-      for(int index = 1; index <= countTo; index++) {
+      for(int index = 1; index <= _number; index++) {
         if (index % 15 == 0)
         {
-          string number = index.ToString();
-          count.Add(number);
-          count[index - 1] = "ping pong";
+          _instances.Add("ping pong");
         }
         else if (index % 5 == 0)
         {
-          string number = index.ToString();
-          count.Add(number);
-          count[index - 1] = "pong";
+          _instances.Add("pong");
         }
         else if (index % 3 == 0)
         {
           string number = index.ToString();
-          count.Add(number);
-          count[index - 1] = "ping";
+          _instances.Add("ping");
         }
         else
         {
-          count.Add(index.ToString());
+          _instances.Add(index.ToString());
         }
     }
-    return count;
+    return _instances;
   }
-    // private int _number;
-    // private static List<int> _pingPongList = new List<int>{};
-    //
-    // public PingPong(int number)
-    // {
-    //   _number = number;
-    // }
-    //
-    // public int GetNumber()
-    // {
-    //   return _number;
-    // }
-    // public void SetNumber(int inputNumber)
-    // {
-    //   _number = inputNumber;
-    // }
-    //
-    // public static List<int> GetList()
-    // {
-    //   return _pingPongList;
-    // }
+
   }
 }

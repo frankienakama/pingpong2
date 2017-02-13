@@ -1,22 +1,21 @@
 using Nancy;
 using System.Collections.Generic;
 using System;
-using PingPongApp;
+using PingPongApp.Objects;
 
-namespace PingPongGenerator
+namespace PingPongApp
 {
   public class HomeModule : NancyModule
   {
     public HomeModule()
     {
-
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
       Post["/results"] = _ => {
-        int userInput = Request.Form["inputNumber"];
-        PingPong testPingPong = new PingPong();
-        List<string> output = testPingPong.CountList(userInput);
+        int userInput = int.Parse(Request.Form["inputNumber"]);
+        PingPong testPingPong = new PingPong(userInput);
+        List<string> output = testPingPong.CountList();
         return View["results.cshtml", output];
       };
     }
