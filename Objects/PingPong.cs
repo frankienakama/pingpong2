@@ -3,23 +3,32 @@ using System.Collections.Generic;
 
 namespace PingPongApp
 {
-  public class PingPongApp
+  public class PingPong
   {
-    private int _number;
-    private static List<int> _pingPongList = new List<int>{};
-
-    public int GetNumber()
+    public bool DivisibleByThree(int input)
     {
-      return _number;
+        return false;
     }
-    public void SetNumber(int inputNumber)
-    {
-      _number = inputNumber;
-    }
-
-    public static List<int> GetList()
-    {
-      return _pingPongList;
-    }
+    // private int _number;
+    // private static List<int> _pingPongList = new List<int>{};
+    //
+    // public PingPong(int number)
+    // {
+    //   _number = number;
+    // }
+    //
+    // public int GetNumber()
+    // {
+    //   return _number;
+    // }
+    // public void SetNumber(int inputNumber)
+    // {
+    //   _number = inputNumber;
+    // }
+    //
+    // public static List<int> GetList()
+    // {
+    //   return _pingPongList;
+    // }
   }
 }
