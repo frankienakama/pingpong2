@@ -1,4 +1,6 @@
 using Xunit;
+using System.Collections.Generic;
+
 namespace PingPongApp
 {
   public class PingPongTest
@@ -60,6 +62,20 @@ namespace PingPongApp
     {
       PingPong testPingPong = new PingPong();
       Assert.Equal(false, testPingPong.Rules(32));
+    }
+
+//Counting function
+    [Fact]
+    public void CountList_ListofFives_ReturnsNewList()
+    {
+      //Arrange
+      List<string> newList = PingPong.CountList(2);
+
+      //Act
+      List<string> testList = new List<string>{ "1", "2" };
+
+      //Assert
+      Assert.Equal(newList,testList);
     }
   }
 }

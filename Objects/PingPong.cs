@@ -24,6 +24,15 @@ namespace PingPongApp
         return input % 3 == 0;
       }
     }
+
+    public static List<string> count = new List<string>{};
+    public static List<string> CountList(int countTo)
+    {
+      for(int index = 1; index <= countTo; index++) {
+        count.Add(index.ToString());
+    }
+    return count;
+  }
     // private int _number;
     // private static List<int> _pingPongList = new List<int>{};
     //
