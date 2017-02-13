@@ -65,14 +65,44 @@ namespace PingPongApp
     }
 
 //Counting function
+// threes
+    [Fact]
+    public void CountList_ListofThrees_ReturnsNewList()
+    {
+      PingPong testPingPong = new PingPong();
+      //Arrange
+      List<string> newList = testPingPong.CountList(3);
+
+      //Act
+      List<string> testList = new List<string>{ "1", "2", "ping" };
+
+      //Assert
+      Assert.Equal(newList,testList);
+    }
+    // Fives
     [Fact]
     public void CountList_ListofFives_ReturnsNewList()
     {
+      PingPong testPingPong = new PingPong();
       //Arrange
-      List<string> newList = PingPong.CountList(2);
+      List<string> newList = testPingPong.CountList(5);
 
       //Act
-      List<string> testList = new List<string>{ "1", "2" };
+      List<string> testList = new List<string>{ "1", "2", "ping", "4", "pong" };
+
+      //Assert
+      Assert.Equal(newList,testList);
+    }
+    // Fifteens
+    [Fact]
+    public void CountList_ListofFifteens_ReturnsNewList()
+    {
+      PingPong testPingPong = new PingPong();
+      //Arrange
+      List<string> newList = testPingPong.CountList(15);
+
+      //Act
+      List<string> testList = new List<string>{ "1", "2", "ping", "4", "pong", "ping", "7", "8", "ping", "pong", "11", "ping", "13", "14", "ping pong" };
 
       //Assert
       Assert.Equal(newList,testList);

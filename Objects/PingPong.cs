@@ -25,11 +25,32 @@ namespace PingPongApp
       }
     }
 
-    public static List<string> count = new List<string>{};
-    public static List<string> CountList(int countTo)
+    public List<string> count = new List<string>{};
+    public List<string> CountList(int countTo)
     {
       for(int index = 1; index <= countTo; index++) {
-        count.Add(index.ToString());
+        if (index % 15 == 0)
+        {
+          string number = index.ToString();
+          count.Add(number);
+          count[index - 1] = "ping pong";
+        }
+        else if (index % 5 == 0)
+        {
+          string number = index.ToString();
+          count.Add(number);
+          count[index - 1] = "pong";
+        }
+        else if (index % 3 == 0)
+        {
+          string number = index.ToString();
+          count.Add(number);
+          count[index - 1] = "ping";
+        }
+        else
+        {
+          count.Add(index.ToString());
+        }
     }
     return count;
   }
